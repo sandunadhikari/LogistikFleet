@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:LogistikFleet.MarkupExtensions"
+             x:Class="LogistikFleet.Views.Productor"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource BackGroundColor}}"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+            ios:Page.UseSafeArea="True">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Image
+                Margin="0,0"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                    Aspect="AspectFill"
+                    Source="car1.png" Opacity="0.6">
+
+            </Image>
+            <Image
+                Margin="0,200"
+                x:Name="bg"
+                IsVisible="false"
+                VerticalOptions="End"
+                    Aspect="AspectFit"
+                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.cars.tesla2.png}"
+                Opacity="0.3">
+                
+            </Image>
+            <StackLayout
+                Margin="20,30,20,20"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="StartAndExpand"
+            BackgroundColor="Transparent">
+            <Image
+                VerticalOptions="Center"
+                    x:Name="logoImage"
+                    Margin="20,50,20,50"
+                    Aspect="AspectFit"
+                    Source="SnapLogo.png">
+                <Image.HeightRequest>
+                    <OnIdiom
+                            x:TypeArguments="x:Double"
+                            Phone="120"
+                            Tablet="160" />
+                </Image.HeightRequest>
+            </Image>
+
+            <ActivityIndicator Color="{StaticResource AccentColor}"
+                               IsRunning="True"
+                               IsVisible="false"
+                               x:Name="loadingIndicatior">
+                <ActivityIndicator.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">
+                            <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="50"
+                                    Tablet="60" />
+                        </On>
+                        <On Platform="Android,Windows">
+                            <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="50"
+                                    Tablet="70" />
+                        </On>
+                    </OnPlatform>
+                </ActivityIndicator.HeightRequest>
+
+            </ActivityIndicator>
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

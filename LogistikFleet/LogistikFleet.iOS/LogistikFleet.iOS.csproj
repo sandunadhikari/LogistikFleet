@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05747D74-CCD9-47D2-9063-96C9A38E2D54}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>LogistikFleet.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>RentallConsumer.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <ProvisioningType>automatic</ProvisioningType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignProvision>RenrallConsumerProfile</CodesignProvision>
+    <CodesignKey>Apple Distribution: Sanker Shivanathan (5NZ7FXPNXG)</CodesignKey>
+    <AssemblyName>LogistikFleet.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <CodesignKey>Apple Distribution: Sanker Shivanathan (5NZ7FXPNXG)</CodesignKey>
+    <CodesignProvision>RenrallConsumerProfile</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>Apple Development: Sanker Shivanathan (Z9Q938M368)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>-all</MtouchInterpreter>
+    <CodesignProvision>VS: com.rentallV3.SwiftRentals Development</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>Apple Distribution: Sanker Shivanathan (5NZ7FXPNXG)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <CodesignProvision>RenrallConsumerProfile</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BorderlessDatePickerRenderer.cs" />
+    <Compile Include="BorderlessPickerRenderer.cs" />
+    <Compile Include="BorderlessTimePickerRenderer.cs" />
+    <Compile Include="CustomEntryRenderer.cs" />
+    <Compile Include="CustomFrameShadowRenderer.cs" />
+    <Compile Include="ExtendedViewCellRenderer.cs" />
+    <Compile Include="ImageCircleRendereriOS.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="NotificationDelegate.cs" />
+    <Compile Include="NotificationHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MyTabbedPageRenderer.cs" />
+    <Compile Include="FocusCustomEntryRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120 1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80 1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40 1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40 2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58 1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CardsView">
+      <Version>2.8.1</Version>
+    </PackageReference>
+    <PackageReference Include="ContextViewCell">
+      <Version>2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView">
+      <Version>2.0.11</Version>
+    </PackageReference>
+    <PackageReference Include="PdfSharp.Xamarin.Forms">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.FacebookClient">
+      <Version>4.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.Permissions">
+      <Version>6.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Buffers">
+      <Version>4.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.ComponentModel.Annotations">
+      <Version>6.0.0-preview.4.21253.7</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.1.1-beta</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Auth">
+      <Version>1.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Controls.SignaturePad.Forms">
+      <Version>3.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Svg">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="Xamarin.Forms.InputKit">
+      <Version>4.1.0-pre.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms.PancakeView">
+      <Version>2.3.0.763-beta</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\iconRedSearch.png" />
+    <BundleResource Include="Resources\iconRedSearch%402x.png" />
+    <BundleResource Include="Resources\iconRedSearch%403x.png" />
+    <BundleResource Include="Resources\iconRedDashboard.png" />
+    <BundleResource Include="Resources\iconRedDashboard%402x.png" />
+    <BundleResource Include="Resources\iconRedDashboard%403x.png" />
+    <BundleResource Include="Resources\iconRedUser.png" />
+    <BundleResource Include="Resources\iconRedUser%402x.png" />
+    <BundleResource Include="Resources\iconRedUser%403x.png" />
+    <BundleResource Include="Resources\carPark.png" />
+    <BundleResource Include="Resources\carPark%402x.png" />
+    <BundleResource Include="Resources\carPark%403x.png" />
+    <BundleResource Include="Resources\Load_more.png" />
+    <BundleResource Include="Resources\Load_more%403x.png" />
+    <BundleResource Include="Resources\Load_more%402x.png" />
+    <BundleResource Include="Resources\OrderNow.png" />
+    <BundleResource Include="Resources\OrderNow%402x.png" />
+    <BundleResource Include="Resources\OrderNow%403x.png" />
+    <BundleResource Include="Resources\iconCalendar.png" />
+    <BundleResource Include="Resources\iconCalendar%402x.png" />
+    <BundleResource Include="Resources\iconCalendar%403x.png" />
+    <BundleResource Include="Resources\iconState.png" />
+    <BundleResource Include="Resources\iconState%402x.png" />
+    <BundleResource Include="Resources\iconState%403x.png" />
+    <BundleResource Include="Resources\illu1.png" />
+    <BundleResource Include="Resources\illu2.png" />
+    <BundleResource Include="Resources\illu3.png" />
+    <BundleResource Include="Resources\car1%403x.png" />
+    <BundleResource Include="Resources\car1%402x.png" />
+    <BundleResource Include="Resources\car1.png" />
+    <BundleResource Include="Resources\truck.png" />
+    <BundleResource Include="Resources\dealership.png" />
+    <BundleResource Include="Resources\preneur.png" />
+    <BundleResource Include="Resources\SnapLogo.png" />
+    <BundleResource Include="Resources\SnapLogoWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aSlide1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aSlide2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aSlide3D.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aSlide3L.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aSlide3Ls.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aSlide2s.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aSlide1s.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aSlide3Ds.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\illu5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\illu4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rightArrBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rightArrWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogistikFleet\LogistikFleet.csproj">
+      <Project>{c0ec9cef-af40-4028-aa4a-965387673218}</Project>
+      <Name>LogistikFleet</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

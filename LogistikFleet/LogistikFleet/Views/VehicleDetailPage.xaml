@@ -1,0 +1,1771 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LogistikFleet.Views.VehicleDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+    xmlns:local="clr-namespace:LogistikFleet.MarkupExtensions"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:renders="clr-namespace:LogistikFleet.Renders" xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    BackgroundColor="{AppThemeBinding Light={StaticResource BackGroundColor}, Dark={StaticResource BlackColor}}"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+            ios:Page.UseSafeArea="True"
+    mc:Ignorable="d">
+
+
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0"
+              HorizontalOptions="Fill"
+                  BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="iOS">
+                                    <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="50"
+                                Tablet="60" />
+                                </On>
+                                <On Platform="Android,Windows">
+                                    <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="50"
+                                Tablet="60" />
+                                </On>
+                            </OnPlatform>
+                        </Grid.HeightRequest>
+
+                        <ImageButton
+                    x:Name="btnBack"
+                    Margin="0"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    Clicked="BacKBtn_Clicked"
+                    HeightRequest="30"
+                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconBack.png}"
+                    VerticalOptions="CenterAndExpand" 
+                Aspect="AspectFit"/>
+
+                    </Grid>
+
+
+                    <Grid ColumnSpacing="10"
+                      Grid.Row="1">
+                        <Grid.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="iOS">
+                                    <OnIdiom
+                                x:TypeArguments="Thickness"
+                                Phone="20,0,20,10"
+                                Tablet="60,0,60,20" />
+                                </On>
+                                <On Platform="Android,Windows">
+                                    <OnIdiom
+                                x:TypeArguments="Thickness"
+                                Phone="20,0,20,10"
+                                Tablet="60,0,60,10" />
+                                </On>
+                            </OnPlatform>
+                        </Grid.Margin>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+
+
+                        <StackLayout Margin="0" Padding="0" VerticalOptions="CenterAndExpand">
+                            <Image Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconSelectBookNow1.png}"
+                               Aspect="AspectFit">
+                                <Image.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="50"
+                                        Tablet="60" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="50"
+                                        Tablet="60" />
+                                        </On>
+                                    </OnPlatform>
+                                </Image.WidthRequest>
+                            </Image>
+                        </StackLayout>
+
+                        <StackLayout  
+                        Grid.Column="1"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                            <BoxView
+                        HeightRequest="8"
+                            WidthRequest="8"
+                            CornerRadius="8" 
+                        Color="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource BackGroundColor}}" />
+                            <BoxView
+                        HeightRequest="8"
+                            WidthRequest="8"
+                            CornerRadius="8" 
+                        Color="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource BackGroundColor}}" />
+                        </StackLayout>
+
+
+                        <StackLayout
+                    Grid.Column="2"
+                    Margin="0"
+                    Padding="0"
+                        VerticalOptions="CenterAndExpand">
+                            <Image Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconSelectBookNow2.png}">
+                                <Image.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="65"
+                                        Tablet="75" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                       Phone="65"
+                                        Tablet="75" />
+                                        </On>
+                                    </OnPlatform>
+                                </Image.WidthRequest>
+                                <Image.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                       Phone="65"
+                                        Tablet="75" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="65"
+                                        Tablet="75" />
+                                        </On>
+                                    </OnPlatform>
+                                </Image.HeightRequest>
+                            </Image>
+                        </StackLayout>
+                        <StackLayout  
+                        Grid.Column="3"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                            <BoxView
+                        HeightRequest="8"
+                            WidthRequest="8"
+                            CornerRadius="8" 
+                        Color="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource BackGroundColor}}" />
+                            <BoxView
+                        HeightRequest="8"
+                            WidthRequest="8"
+                            CornerRadius="8" 
+                        Color="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource BackGroundColor}}" />
+                        </StackLayout>
+
+                        <StackLayout
+                    Grid.Column="4"
+                    Margin="0"
+                    Padding="0"
+                        VerticalOptions="CenterAndExpand">
+                            <Image Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconSelectBookNow3.png}">
+                                <Image.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="50"
+                                        Tablet="60" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="50"
+                                        Tablet="60" />
+                                        </On>
+                                    </OnPlatform>
+                                </Image.WidthRequest>
+                            </Image>
+                        </StackLayout>
+
+                        <StackLayout  
+                        Grid.Column="5"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                            <BoxView
+                        HeightRequest="8"
+                            WidthRequest="8"
+                            CornerRadius="8" 
+                        Color="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource BackGroundColor}}" />
+                            <BoxView
+                        HeightRequest="8"
+                            WidthRequest="8"
+                            CornerRadius="8" 
+                        Color="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource BackGroundColor}}" />
+                        </StackLayout>
+                        <StackLayout
+                    Grid.Column="6"
+                    Margin="0"
+                    Padding="0"
+                        VerticalOptions="CenterAndExpand">
+                            <Image Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconSelectBookNow4.png}">
+                                <Image.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="50"
+                                        Tablet="60" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="50"
+                                        Tablet="60" />
+                                        </On>
+                                    </OnPlatform>
+                                </Image.WidthRequest>
+                            </Image>
+                        </StackLayout>
+
+
+                        <!--<Frame
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Padding="0"
+                    BackgroundColor="{StaticResource PrimaryColor}"
+                    BorderColor="{StaticResource PrimaryColor}"
+                    CornerRadius="40"
+                    HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="40">
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource BackGroundColor}"
+                        VerticalOptions="Center">
+                        1
+                    </Label>
+                </Frame>
+                <Frame
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="{StaticResource PrimaryColor}"
+                    CornerRadius="40"
+                    HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="40">
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource BlackColor}"
+                        VerticalOptions="Center">
+                        2
+                    </Label>
+                </Frame>
+
+                <Frame
+                    Grid.Row="0"
+                    Grid.Column="5"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="{StaticResource PrimaryColor}"
+                    CornerRadius="40"
+                    HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="40">
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="5"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource BlackColor}"
+                        VerticalOptions="Center">
+                        3
+                    </Label>
+                </Frame>
+
+                <Frame
+                    Grid.Row="0"
+                    Grid.Column="7"
+                    Padding="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="{StaticResource PrimaryColor}"
+                    CornerRadius="40"
+                    HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="40">
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="5"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource BlackColor}"
+                        VerticalOptions="Center">
+                        4
+                    </Label>
+                </Frame>-->
+
+
+                    </Grid>
+
+
+
+                    <Grid Grid.Row="2" VerticalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Margin="0,0,0,5"
+                            FontAttributes="Bold"
+                            FontFamily="SourceSansPro-Bold"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="BOOK NOW - VEHICLE DETAILS"
+                            TextColor="{AppThemeBinding Light={StaticResource PrimaryColor}, Dark={StaticResource BackGroundColor}}">
+                            <Label.FontSize>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <On Platform="iOS">
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="20"
+                                            Tablet="24" />
+                                    </On>
+                                    <On Platform="Android,Windows">
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="22"
+                                            Tablet="26" />
+                                    </On>
+                                </OnPlatform>
+                            </Label.FontSize>
+                        </Label>
+                        <Grid
+                            IsVisible="false"
+                            Grid.Row="1"
+                            BackgroundColor="{StaticResource LightGrayColor}"
+                            VerticalOptions="CenterAndExpand">
+                            <Grid.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <On Platform="iOS">
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="40"
+                                            Tablet="50" />
+                                    </On>
+                                    <On Platform="Android,Windows">
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="40"
+                                            Tablet="50" />
+                                    </On>
+                                </OnPlatform>
+                            </Grid.HeightRequest>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="9*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image
+                                Margin="10,0,0,0"
+                                Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconBlackLocation.png}"
+                                VerticalOptions="CenterAndExpand" />
+
+                            <Label
+                                x:Name="lblLocation"
+                                Grid.Column="1"
+                                Margin="0,0,10,0"
+                                FontFamily="SourceSansPro-Regular"
+                                FontSize="Medium"
+                                Text="Location Name"
+                                TextColor="{StaticResource BlackColor}"
+                                VerticalOptions="CenterAndExpand">
+                                <Label.FontSize>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="iOS">
+                                            <OnIdiom
+                                                x:TypeArguments="x:Double"
+                                                Phone="16"
+                                                Tablet="22" />
+                                        </On>
+                                        <On Platform="Android,Windows">
+                                            <OnIdiom
+                                                x:TypeArguments="x:Double"
+                                                Phone="18"
+                                                Tablet="22" />
+                                        </On>
+                                    </OnPlatform>
+                                </Label.FontSize>
+                            </Label>
+                        </Grid>
+
+                       
+                        <Grid 
+                            Grid.Row="2"
+                            Padding="0,10,0,-5"
+                            ColumnSpacing="10"
+                            VerticalOptions="CenterAndExpand"
+                            BackgroundColor="{StaticResource GrayColor}">
+                            <Grid.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <On Platform="iOS">
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="50"
+                                            Tablet="60" />
+                                    </On>
+                                    <On Platform="Android,Windows">
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="50"
+                                            Tablet="60" />
+                                    </On>
+                                </OnPlatform>
+                            </Grid.HeightRequest>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <StackLayout
+                                Margin="20,0,0,0"
+                                Padding="0"
+                                Orientation="Horizontal"
+                                Spacing="10">
+
+                                <Image
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="Center"
+                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconEDate.png}"
+                                    VerticalOptions="CenterAndExpand">
+                                    <Image.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="17"
+                                                    Tablet="22" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="17"
+                                                    Tablet="22" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Image.HeightRequest>
+                                </Image>
+
+                                <Label
+                                    x:Name="startDateLabel"
+                                    FontFamily="SourceSansPro-Black"
+                                    TextColor="{AppThemeBinding Light={StaticResource BackGroundColor}, Dark={StaticResource BackGroundColor}}">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Label.FontSize>
+                                </Label>
+                                <Label
+                                    x:Name="startTimeLabel"
+                                    FontFamily="SourceSansPro-Black"
+                                    TextColor="{AppThemeBinding Light={StaticResource BackGroundColor}, Dark={StaticResource BackGroundColor}}">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Label.FontSize>
+                                </Label>
+                            </StackLayout>
+                            <StackLayout
+                                Grid.Row="1"
+                                Margin="20,0,0,0"
+                                Padding="0"
+                                Orientation="Horizontal"
+                                Spacing="10">
+
+                                <Image
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="Center"
+                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconAddress.png}"
+                                    VerticalOptions="CenterAndExpand">
+                                    <Image.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="17"
+                                                    Tablet="22" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="17"
+                                                    Tablet="22" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Image.HeightRequest>
+                                </Image>
+                                <Label
+                                    x:Name="startLoc"
+                                    FontFamily="SourceSansPro-Black"
+                                    TextColor="{AppThemeBinding Light={StaticResource BackGroundColor}, Dark={StaticResource BackGroundColor}}">
+                                    Start Time :
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Label.FontSize>
+                                </Label>
+
+                            </StackLayout>
+
+                            <StackLayout
+                                Grid.Column="1"
+                                Margin="0,0,20,0"
+                                Padding="0"
+                                HorizontalOptions="EndAndExpand"
+                                Orientation="Horizontal"
+                                Spacing="10">
+                                <Label
+                                    x:Name="endDateLabel"
+                                    FontAttributes="Bold"
+                                    FontFamily="SourceSansPro-Black"
+                                    TextColor="{AppThemeBinding Light={StaticResource BackGroundColor}, Dark={StaticResource BackGroundColor}}">
+                                    End Date :
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Label.FontSize>
+                                </Label>
+                                <Label
+                                    x:Name="endTimeLabel"
+                                    FontFamily="SourceSansPro-Black"
+                                    FontSize="12"
+                                    TextColor="{AppThemeBinding Light={StaticResource BackGroundColor}, Dark={StaticResource BackGroundColor}}">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Label.FontSize>
+                                </Label>
+
+                                <Image
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="Center"
+                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconEDate.png}"
+                                    VerticalOptions="CenterAndExpand">
+                                    <Image.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="17"
+                                                    Tablet="22" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="17"
+                                                    Tablet="22" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Image.HeightRequest>
+                                </Image>
+                            </StackLayout>
+                            <StackLayout
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="0,0,20,0"
+                                Padding="0"
+                                HorizontalOptions="End"
+                                Orientation="Horizontal"
+                                Spacing="10">
+                                <Label
+                                    x:Name="endLoc"
+                                    FontAttributes="Bold"
+                                    FontFamily="SourceSansPro-Black"
+                                    FontSize="12"
+                                    TextColor="{AppThemeBinding Light={StaticResource BackGroundColor}, Dark={StaticResource BackGroundColor}}">
+                                    End Time :
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="12"
+                                                    Tablet="16" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Label.FontSize>
+                                </Label>
+                            
+
+                                <Image
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="Center"
+                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconAddress.png}"
+                                    VerticalOptions="CenterAndExpand">
+                                    <Image.HeightRequest>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="17"
+                                                    Tablet="22" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                    x:TypeArguments="x:Double"
+                                                    Phone="17"
+                                                    Tablet="22" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Image.HeightRequest>
+                                </Image>
+                            </StackLayout>
+
+
+
+                        </Grid>
+                        <Image
+                            Grid.Row="2"
+
+                                    BackgroundColor="Transparent"
+                                    HorizontalOptions="Center"
+                                    Source="rightArrWhite.png"
+                                    VerticalOptions="CenterAndExpand"
+                            >
+                            <Image.HeightRequest>
+                                <OnPlatform x:TypeArguments="x:Double">
+                                    <On Platform="iOS">
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="40"
+                                            Tablet="60" />
+                                    </On>
+                                    <On Platform="Android,Windows">
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="40"
+                                            Tablet="60" />
+                                    </On>
+                                </OnPlatform>
+                            </Image.HeightRequest>
+                        </Image>
+                        
+                        
+                        
+                        <Grid Grid.Row="3" Margin="15,20,15,0">
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <ListView
+                                    x:Name="vehicleDetailList"
+                                    Margin="0,10,0,10"
+                                    IsPullToRefreshEnabled="True"
+                                    RefreshControlColor="{StaticResource PrimaryColor}"
+                                    Refreshing="VehicleDetailList_Refreshing"
+                                    RowHeight="260"
+                                    SeparatorColor="{StaticResource PrimaryColor}"
+                                    SeparatorVisibility="None"
+                                    VerticalScrollBarVisibility="Never"
+                                    ItemSelected="vehicleDetailList_ItemSelected"
+                                    BackgroundColor="Transparent"
+                                    >
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate >
+                                            <renders:ExtendedViewCell  SelectedBackgroundColor="{AppThemeBinding Dark={StaticResource BlackColor}, Light={StaticResource BackGroundColor}}" >
+                                                <Grid Margin="0,0,0,0">
+                                                    <pancakeview:PancakeView 
+                                                        Margin="10"
+                                                        BackgroundColor="{AppThemeBinding Light={StaticResource LightGrayColor}, Dark={StaticResource frameBoarderDark}}"
+                                                        Padding="0"
+                                                        CornerRadius="5">
+                                                        <pancakeview:PancakeView.Shadow>
+                                                            <pancakeview:DropShadow Color="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource BackGroundColor}}" Offset="5,5"/>
+                                                        </pancakeview:PancakeView.Shadow>
+                                                        <!--<Frame.Background>
+                                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                                <GradientStop Color="{AppThemeBinding Light={StaticResource LightGrayColor}, Dark={StaticResource LightGrayColor}}" Offset="0.7"/>
+                                                                <GradientStop Color="{AppThemeBinding Dark={StaticResource AccentColor},Light={StaticResource AccentColor}}" Offset="1.0"/>
+                                                            </LinearGradientBrush>
+                                                        </Frame.Background>-->
+                                                        <Grid RowSpacing="10">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto" />
+                                                                <RowDefinition Height="50" />
+                                                            </Grid.RowDefinitions>
+
+                                                            <Image
+                                                                Grid.Row="0"
+                                                                Grid.RowSpan="2"
+                                                                    Source="{Binding VehicleImageUrl}"
+                                                                Aspect="AspectFit"
+                                                                Margin="160,50,-150,-50"
+                                                                Opacity="0.03"
+                                                                HorizontalOptions="FillAndExpand"/>
+
+
+
+                                                            <Frame Grid.Row="0"
+                                                                   CornerRadius="10"
+                                                                   Padding="5"
+                                                                Margin="0"
+                                                                HeightRequest="200"
+                                                                HorizontalOptions="FillAndExpand"
+                                                                   HasShadow="False"
+                                                                   IsClippedToBounds="True"
+                                                                   BackgroundColor="Transparent">
+                                                                <Grid HeightRequest="200">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Image
+                                                                    Source="{Binding VehicleImageUrl}"
+                                                                    VerticalOptions="FillAndExpand"
+                                                                   BackgroundColor="Transparent"
+                                                                    Aspect="AspectFit"
+                                                                    Margin="0,10,10,10"
+                                                                        Grid.Column="0"
+                                                                    
+                                                                    />
+                                                                    <StackLayout Grid.Column="1" Margin="0,10,20,10" VerticalOptions="Center" HorizontalOptions="End" Spacing="20">
+
+                                                                        <Label
+                                                                        FontFamily="SourceSansPro-Regular"
+                                                                        Text="{Binding vehicleYear}"
+                                                                        TextColor="{AppThemeBinding Light= {StaticResource BlackColor},Dark={StaticResource BackGroundColor}}"
+                                                                        VerticalOptions="CenterAndExpand"
+                                                                    Margin="0,0,10,0">
+                                                                            <Label.FontSize>
+                                                                                <OnPlatform x:TypeArguments="x:Double">
+                                                                                    <On Platform="iOS">
+                                                                                        <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="16"
+                                                                                    Tablet="20" />
+                                                                                    </On>
+                                                                                    <On Platform="Android,Windows">
+                                                                                        <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="18"
+                                                                                    Tablet="22" />
+                                                                                    </On>
+                                                                                </OnPlatform>
+                                                                            </Label.FontSize>
+                                                                        </Label>
+
+                                                                        <StackLayout
+                                                                    Margin="0"
+                                                                    Padding="0"
+                                                                    Orientation="Horizontal"
+                                                                    Spacing="10">
+                                                                            <Image
+                                                                        BackgroundColor="Transparent"
+                                                                        HorizontalOptions="Center"
+                                                                        Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconGraySeat.png}"
+                                                                        VerticalOptions="CenterAndExpand">
+                                                                                <Image.HeightRequest>
+                                                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                                                        <On Platform="iOS">
+                                                                                            <OnIdiom
+                                                                                        x:TypeArguments="x:Double"
+                                                                                        Phone="17"
+                                                                                        Tablet="22" />
+                                                                                        </On>
+                                                                                        <On Platform="Android,Windows">
+                                                                                            <OnIdiom
+                                                                                        x:TypeArguments="x:Double"
+                                                                                        Phone="17"
+                                                                                        Tablet="22" />
+                                                                                        </On>
+                                                                                    </OnPlatform>
+                                                                                </Image.HeightRequest>
+                                                                            </Image>
+                                                                            <Label
+                                                                        FontFamily="SourceSansPro-Regular"
+                                                                        FontSize="Small"
+                                                                        Text="{Binding Seats}"
+                                                                        TextColor="{AppThemeBinding Light= {StaticResource BlackColor},Dark={StaticResource BackGroundColor}}"
+                                                                        VerticalOptions="CenterAndExpand">
+                                                                                <Label.FontSize>
+                                                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                                                        <On Platform="iOS">
+                                                                                            <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="16"
+                                                                                    Tablet="20" />
+                                                                                        </On>
+                                                                                        <On Platform="Android,Windows">
+                                                                                            <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="18"
+                                                                                    Tablet="22" />
+                                                                                        </On>
+                                                                                    </OnPlatform>
+                                                                                </Label.FontSize>
+                                                                            </Label>
+                                                                        </StackLayout>
+
+                                                                        <StackLayout
+                                                                    Margin="0"
+                                                                    Padding="0"
+                                                                    Orientation="Horizontal"
+                                                                    Spacing="10">
+                                                                            <Image
+                                                                        BackgroundColor="Transparent"
+                                                                        HorizontalOptions="Center"
+                                                                        Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconGrayBag.png}"
+                                                                        VerticalOptions="CenterAndExpand">
+                                                                                <Image.HeightRequest>
+                                                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                                                        <On Platform="iOS">
+                                                                                            <OnIdiom
+                                                                                        x:TypeArguments="x:Double"
+                                                                                        Phone="17"
+                                                                                        Tablet="22" />
+                                                                                        </On>
+                                                                                        <On Platform="Android,Windows">
+                                                                                            <OnIdiom
+                                                                                        x:TypeArguments="x:Double"
+                                                                                        Phone="17"
+                                                                                        Tablet="22" />
+                                                                                        </On>
+                                                                                    </OnPlatform>
+                                                                                </Image.HeightRequest>
+                                                                            </Image>
+                                                                            <Label
+                                                                        FontFamily="SourceSansPro-Regular"
+                                                                        Text="{Binding NoOfLuggage}"
+                                                                        TextColor="{AppThemeBinding Light= {StaticResource BlackColor},Dark={StaticResource BackGroundColor}}"
+                                                                        VerticalOptions="CenterAndExpand">
+                                                                                <Label.FontSize>
+                                                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                                                        <On Platform="iOS">
+                                                                                            <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="16"
+                                                                                    Tablet="20" />
+                                                                                        </On>
+                                                                                        <On Platform="Android,Windows">
+                                                                                            <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="18"
+                                                                                    Tablet="22" />
+                                                                                        </On>
+                                                                                    </OnPlatform>
+                                                                                </Label.FontSize>
+                                                                            </Label>
+                                                                        </StackLayout>
+
+                                                                    </StackLayout>
+
+                                                                </Grid>
+
+                                                            </Frame>
+
+
+                                                            <Grid Grid.Row="1" Margin="10,0,10,10">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*" />
+                                                                    <ColumnDefinition Width="Auto" />
+                                                                </Grid.ColumnDefinitions>
+
+                                                                <Label
+                                                                    FontFamily="SourceSansPro-Bold"
+                                                                    Text="{Binding vehicleName}"
+                                                                   TextColor="{AppThemeBinding Light= {StaticResource BlackColor},Dark={StaticResource BackGroundColor}}"
+                                                                    VerticalOptions="Center"
+                                                                    HorizontalOptions="StartAndExpand">
+                                                                    <Label.FontSize>
+                                                                        <OnPlatform x:TypeArguments="x:Double">
+                                                                            <On Platform="iOS">
+                                                                                <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="16"
+                                                                                    Tablet="20" />
+                                                                            </On>
+                                                                            <On Platform="Android,Windows">
+                                                                                <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="18"
+                                                                                    Tablet="22" />
+                                                                            </On>
+                                                                        </OnPlatform>
+                                                                    </Label.FontSize>
+                                                                </Label>
+                                                                <StackLayout Orientation="Horizontal"  Grid.Column="1" VerticalOptions="Center"
+                                                                             Margin="0,0,10,0">
+                                                                    <Label
+                                                                        Margin="0"
+                                                                        FontFamily="SourceSansPro-Bold"
+                                                                        Text="$"
+                                                                        TextColor="{AppThemeBinding Light= {StaticResource BlackColor},Dark={StaticResource BackGroundColor}}"
+                                                                        VerticalOptions="Center">
+                                                                        <Label.FontSize>
+                                                                            <OnPlatform x:TypeArguments="x:Double">
+                                                                                <On Platform="iOS">
+                                                                                    <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="16"
+                                                                                    Tablet="20" />
+                                                                                </On>
+                                                                                <On Platform="Android,Windows">
+                                                                                    <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="18"
+                                                                                    Tablet="22" />
+                                                                                </On>
+                                                                            </OnPlatform>
+                                                                        </Label.FontSize>
+                                                                    </Label>
+                                                                    <Label
+                                                                        Margin="0"
+                                                                        FontFamily="SourceSansPro-Bold"
+                                                                        Text="{Binding DailyRate}"
+                                                                       TextColor="{AppThemeBinding Light= {StaticResource BlackColor},Dark={StaticResource BackGroundColor}}"
+                                                                        VerticalOptions="Center">
+                                                                        <Label.FontSize>
+                                                                            <OnPlatform x:TypeArguments="x:Double">
+                                                                                <On Platform="iOS">
+                                                                                    <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="16"
+                                                                                    Tablet="20" />
+                                                                                </On>
+                                                                                <On Platform="Android,Windows">
+                                                                                    <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="18"
+                                                                                    Tablet="22" />
+                                                                                </On>
+                                                                            </OnPlatform>
+                                                                        </Label.FontSize>
+                                                                    </Label>
+                                                                </StackLayout>
+
+
+
+
+                                                                <Button
+                                                                    IsVisible="false"
+                                                                    x:Name="btnBookNow"
+                                                                    Grid.Column="0"
+                                                                    Padding="10,0,10,0"
+                                                                    BackgroundColor="{StaticResource PrimaryColorDuplicate}"
+                                                                    Clicked="btnBookNow_Clicked"
+                                                                    CornerRadius="10"
+                                                                    Text="Book Now"
+                                                                    TextColor="{StaticResource BackGroundColor}"
+                                                                    VerticalOptions="CenterAndExpand">
+                                                                    <Button.FontSize>
+                                                                        <OnPlatform x:TypeArguments="x:Double">
+                                                                            <On Platform="iOS">
+                                                                                <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="16"
+                                                                                    Tablet="20" />
+                                                                            </On>
+                                                                            <On Platform="Android,Windows">
+                                                                                <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="18"
+                                                                                    Tablet="20" />
+                                                                            </On>
+                                                                        </OnPlatform>
+                                                                    </Button.FontSize>
+                                                                    <Button.HeightRequest>
+                                                                        <OnPlatform x:TypeArguments="x:Double">
+                                                                            <On Platform="iOS">
+                                                                                <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="40"
+                                                                                    Tablet="50" />
+                                                                            </On>
+                                                                            <On Platform="Android,Windows">
+                                                                                <OnIdiom
+                                                                                    x:TypeArguments="x:Double"
+                                                                                    Phone="40"
+                                                                                    Tablet="50" />
+                                                                            </On>
+                                                                        </OnPlatform>
+                                                                    </Button.HeightRequest>
+                                                                </Button>
+
+                                                            </Grid>
+                                                            <!--</Frame>  LoadingPlaceholder="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconNoCar.png}"  ErrorPlaceholder="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconCarLoadin.png}"-->
+
+                                                            <!--<Grid Grid.Row="3" Margin="10,0">
+                                                        <Grid RowSpacing="10">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto" />
+                                                                <RowDefinition Height="Auto" />
+                                                            </Grid.RowDefinitions>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="*" />
+                                                                <ColumnDefinition Width="Auto" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <StackLayout
+                                                                Margin="0"
+                                                                Padding="0"
+                                                                Spacing="0">
+                                                                <Label
+                                                                    FontFamily="SourceSansPro-Bold"
+                                                                    FontSize="Large"
+                                                                    Text="Similar To"
+                                                                    TextColor="{StaticResource BlackColor}" />
+
+                                                                <Label
+                                                                    FontFamily="Roboto-Regular"
+                                                                    FontSize="Medium"
+                                                                    Text="{Binding sample}"
+                                                                    TextColor="{StaticResource BlackColor}" />
+                                                            </StackLayout>
+
+                                                            <Label
+                                                                Grid.Column="1"
+                                                                FontFamily="SourceSansPro-Bold"
+                                                                FontSize="Large"
+                                                                Text="{Binding VehicleType}"
+                                                                TextColor="{StaticResource PrimaryColorDuplicate}"
+                                                                VerticalOptions="Start" />
+
+                                                            <StackLayout
+                                                                Grid.Row="1"
+                                                                Grid.Column="0"
+                                                                Grid.ColumnSpan="2"
+                                                                Orientation="Horizontal"
+                                                                Spacing="15">
+
+
+                                                                <StackLayout
+                                                                    Grid.Column="0"
+                                                                    Margin="0"
+                                                                    Padding="0"
+                                                                    Orientation="Horizontal"
+                                                                    Spacing="5">
+                                                                    <ImageButton
+                                                                        BackgroundColor="Transparent"
+                                                                        HeightRequest="25"
+                                                                        HorizontalOptions="Center"
+                                                                        Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconSeat.png}"
+                                                                        VerticalOptions="Center" />
+                                                                    <Label
+                                                                        FontFamily="SourceSansPro-Regular"
+                                                                        FontSize="Small"
+                                                                        Text="{Binding Seats}"
+                                                                        TextColor="{StaticResource BlackColor}"
+                                                                        VerticalOptions="Center" />
+                                                                </StackLayout>
+
+                                                                <StackLayout
+                                                                    Margin="0"
+                                                                    Padding="0"
+                                                                    Orientation="Horizontal"
+                                                                    Spacing="5">
+                                                                    <ImageButton
+                                                                        BackgroundColor="Transparent"
+                                                                        HeightRequest="25"
+                                                                        HorizontalOptions="Center"
+                                                                        Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconBags.png}"
+                                                                        VerticalOptions="Center" />
+                                                                    <Label
+                                                                        FontFamily="SourceSansPro-Regular"
+                                                                        FontSize="Small"
+                                                                        Text="{Binding NoOfLuggage}"
+                                                                        TextColor="{StaticResource BlackColor}"
+                                                                        VerticalOptions="Center" />
+                                                                </StackLayout>
+
+
+                                                                <StackLayout
+                                                                    Margin="0"
+                                                                    Padding="0"
+                                                                    Orientation="Horizontal"
+                                                                    Spacing="5">
+                                                                    <ImageButton
+                                                                        BackgroundColor="Transparent"
+                                                                        HeightRequest="25"
+                                                                        HorizontalOptions="Center"
+                                                                        Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconFeature.png}"
+                                                                        VerticalOptions="Center" />
+                                                                    <Label
+                                                                        FontFamily="SourceSansPro-Regular"
+                                                                        FontSize="Small"
+                                                                        Text="{Binding Transmission}"
+                                                                        TextColor="{StaticResource BlackColor}"
+                                                                        VerticalOptions="Center" />
+                                                                </StackLayout>
+
+                                                                <StackLayout
+                                                                    Margin="0"
+                                                                    Padding="0"
+                                                                    Orientation="Horizontal"
+                                                                    Spacing="5">
+                                                                    <ImageButton
+                                                                        BackgroundColor="Transparent"
+                                                                        HeightRequest="25"
+                                                                        HorizontalOptions="Center"
+                                                                        Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconRentPay.png}"
+                                                                        VerticalOptions="Center" />
+                                                                    <Label
+                                                                        Margin="0"
+                                                                        FontFamily="SourceSansPro-Regular"
+                                                                        FontSize="Small"
+                                                                        Text="{Binding RateTotal}"
+                                                                        TextColor="{StaticResource BlackColor}"
+                                                                        VerticalOptions="Center" />
+                                                                </StackLayout>
+                                                            </StackLayout>
+                                                        </Grid>
+                                                    </Grid>-->
+
+                                                        </Grid>
+                                                    </pancakeview:PancakeView>
+
+
+
+
+                                                    <!--<CheckBox Grid.Row="0"
+                                                       Grid.ColumnSpan="2"
+                                                        Color="{StaticResource PrimaryColor}"
+                                                        x:Name="vehicleCheckbox"
+                                                        HorizontalOptions="End"
+                                                        Margin="0,0,5,0"
+                                                        IsChecked="{Binding selected}"
+                                                        IsEnabled="False"
+                                                  IsVisible="{Binding selected}"/>-->
+
+                                                    <!--<Frame
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Margin="10,10,10,10"
+                                                Padding="2"
+                                                BorderColor="{StaticResource PrimaryColor}"
+                                                CornerRadius="15"
+                                                HeightRequest="160"
+                                                HorizontalOptions="Center"
+                                                IsClippedToBounds="True"
+                                                VerticalOptions="Center"
+                                                WidthRequest="160" />
+                                            <Frame
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Margin="0,20,0,20"
+                                                Padding="0"
+                                                BackgroundColor="{StaticResource PrimaryColor}"
+                                                BorderColor="{StaticResource PrimaryColor}"
+                                                HasShadow="False"
+                                                HorizontalOptions="End"
+                                                WidthRequest="1" />-->
+
+                                                    <!--<Grid
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                Padding="0"
+                                                VerticalOptions="CenterAndExpand">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*" />
+                                                    <ColumnDefinition Width="4*" />
+                                                    <ColumnDefinition Width="4*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <ImageButton
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="Transparent"
+                                                    HeightRequest="20"
+                                                    HorizontalOptions="Center"
+                                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.seat.png}"
+                                                    VerticalOptions="Center" />
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Grid.Column="1"
+                                                    FontSize="Small"
+                                                    TextColor="{StaticResource BlackColor}"
+                                                    VerticalOptions="Center">
+                                                    Seats
+                                                </Label>
+
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Grid.Column="2"
+                                                    FontSize="Small"
+
+                                                    TextColor="{StaticResource GrayColor}"
+                                                    VerticalOptions="Center" />
+
+                                                <ImageButton
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="Transparent"
+                                                    HeightRequest="20"
+                                                    HorizontalOptions="Center"
+                                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.luggage.png}"
+                                                    VerticalOptions="Center" />
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.Column="1"
+                                                    FontSize="Small"
+                                                    TextColor="{StaticResource BlackColor}"
+                                                    VerticalOptions="Center">
+                                                    Luggage
+                                                </Label>
+
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.Column="2"
+                                                    FontSize="Small"
+
+                                                    TextColor="{StaticResource GrayColor}"
+                                                    VerticalOptions="Center" />
+
+                                                <ImageButton
+                                                    Grid.Row="2"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="Transparent"
+                                                    HeightRequest="20"
+                                                    HorizontalOptions="Center"
+                                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.gears.png}"
+                                                    VerticalOptions="Center" />
+                                                <Label
+                                                    Grid.Row="2"
+                                                    Grid.Column="1"
+                                                    FontSize="Small"
+                                                    TextColor="{StaticResource BlackColor}"
+                                                    VerticalOptions="Center">
+                                                    Transmission
+                                                </Label>
+
+                                                <Label
+                                                    Grid.Row="2"
+                                                    Grid.Column="2"
+                                                    FontSize="Small"
+                                                    Text="{Binding Transmission}"
+                                                    TextColor="{StaticResource GrayColor}"
+                                                    VerticalOptions="Center" />
+
+                                                <ImageButton
+                                                    Grid.Row="3"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="Transparent"
+                                                    HeightRequest="20"
+                                                    HorizontalOptions="Center"
+                                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.rental.png}"
+                                                    VerticalOptions="Center" />
+                                                <Label
+                                                    Grid.Row="3"
+                                                    Grid.Column="1"
+                                                    FontSize="Small"
+                                                    TextColor="{StaticResource BlackColor}"
+                                                    VerticalOptions="Center">
+                                                    Rental
+                                                </Label>
+
+                                                <Label
+                                                    Grid.Row="3"
+                                                    Grid.Column="2"
+                                                    FontSize="Small"
+
+                                                    TextColor="{StaticResource GrayColor}"
+                                                    VerticalOptions="Center" />
+
+                                            </Grid>-->
+                                                    <!--<Label
+                                                Grid.Row="2"
+                                                Grid.Column="0"
+                                                FontSize="Small"
+                                                HorizontalOptions="End"
+                                                Text="Similar to"
+                                                TextColor="{StaticResource BlackColor}"
+                                                VerticalOptions="Center" />-->
+
+                                                    <!--<Label
+                                                Grid.Row="2"
+                                                Grid.Column="1"
+                                                FontSize="Small"
+                                                HorizontalOptions="Start"
+                                                Text="{Binding sample}"
+                                                TextColor="{StaticResource GrayColor}"
+                                                VerticalOptions="Center" />-->
+                                                </Grid>
+                                                <!--<Grid Margin="0,12,0,12" ColumnSpacing="20">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="40" />
+                                                <RowDefinition Height="190" />
+                                                <RowDefinition Height="30" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="4*" />
+                                                <ColumnDefinition Width="5*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Frame
+                                                Grid.RowSpan="3"
+                                                Grid.ColumnSpan="2"
+                                                Padding="5,5,10,5"
+                                                BackgroundColor="{StaticResource PrimaryColorLight}"
+                                                BorderColor="Transparent"
+                                                CornerRadius="10" />
+                                            <Label
+                                                Grid.Row="0"
+                                                Grid.ColumnSpan="2"
+                                                FontAttributes="Bold"
+                                                FontSize="Small"
+                                                HorizontalOptions="Center"
+                                                Text="{Binding VehicleType}"
+                                                TextColor="{StaticResource BlackColor}"
+                                                VerticalOptions="Center" />
+
+
+                                            <BoxView
+                                                Grid.Row="0"
+                                                Grid.ColumnSpan="2"
+                                                BackgroundColor="{StaticResource PrimaryColor}"
+                                                HeightRequest="1"
+                                                HorizontalOptions="Fill"
+                                                VerticalOptions="End" />
+
+
+                                                -->
+                                                <!--<CheckBox Grid.Row="0"
+                                                       Grid.ColumnSpan="2"
+                                                        Color="{StaticResource PrimaryColor}"
+                                                        x:Name="vehicleCheckbox"
+                                                        HorizontalOptions="End"
+                                                        Margin="0,0,5,0"
+                                                        IsChecked="{Binding selected}"
+                                                        IsEnabled="False"
+                                                  IsVisible="{Binding selected}"/>-->
+                                                <!--
+
+                                            <Frame
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Margin="10,10,10,10"
+                                                Padding="2"
+                                                BorderColor="Transparent"
+                                                CornerRadius="160"
+                                                HeightRequest="160"
+                                                HorizontalOptions="Center"
+                                                IsClippedToBounds="True"
+                                                VerticalOptions="Center"
+                                                WidthRequest="160">
+
+                                                <Image
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    Aspect="AspectFit"
+                                                    HeightRequest="160"
+                                                    HorizontalOptions="Center"
+                                                    Source="{Binding VehicleImageUrl}"
+                                                    VerticalOptions="Center" />
+                                            </Frame>
+                                            <Frame
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Margin="0,20,0,20"
+                                                Padding="0"
+                                                BackgroundColor="{StaticResource PrimaryColor}"
+                                                BorderColor="{StaticResource PrimaryColor}"
+                                                HasShadow="False"
+                                                HorizontalOptions="End"
+                                                WidthRequest="1" />
+
+                                            <Grid
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                Padding="0"
+                                                VerticalOptions="CenterAndExpand">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="2*" />
+                                                    <ColumnDefinition Width="4*" />
+                                                    <ColumnDefinition Width="4*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <ImageButton
+                                                    Grid.Row="0"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="Transparent"
+                                                    HeightRequest="20"
+                                                    HorizontalOptions="Center"
+                                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.seat.png}"
+                                                    VerticalOptions="Center" />
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Grid.Column="1"
+                                                    FontSize="Small"
+                                                    TextColor="{StaticResource BlackColor}"
+                                                    VerticalOptions="Center">
+                                                    Seats
+                                                </Label>
+
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Grid.Column="2"
+                                                    FontSize="Small"
+                                                    Text="{Binding Seats}"
+                                                    TextColor="{StaticResource GrayColor}"
+                                                    VerticalOptions="Center" />
+
+                                                <ImageButton
+                                                    Grid.Row="1"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="Transparent"
+                                                    HeightRequest="20"
+                                                    HorizontalOptions="Center"
+                                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.luggage.png}"
+                                                    VerticalOptions="Center" />
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.Column="1"
+                                                    FontSize="Small"
+                                                    TextColor="{StaticResource BlackColor}"
+                                                    VerticalOptions="Center">
+                                                    Luggage
+                                                </Label>
+
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.Column="2"
+                                                    FontSize="Small"
+                                                    Text="{Binding NoOfLuggage}"
+                                                    TextColor="{StaticResource GrayColor}"
+                                                    VerticalOptions="Center" />
+
+                                                <ImageButton
+                                                    Grid.Row="2"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="Transparent"
+                                                    HeightRequest="20"
+                                                    HorizontalOptions="Center"
+                                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.gears.png}"
+                                                    VerticalOptions="Center" />
+                                                <Label
+                                                    Grid.Row="2"
+                                                    Grid.Column="1"
+                                                    FontSize="Small"
+                                                    TextColor="{StaticResource BlackColor}"
+                                                    VerticalOptions="Center">
+                                                    Transmission
+                                                </Label>
+
+                                                <Label
+                                                    Grid.Row="2"
+                                                    Grid.Column="2"
+                                                    FontSize="Small"
+                                                    Text="{Binding Transmission}"
+                                                    TextColor="{StaticResource GrayColor}"
+                                                    VerticalOptions="Center" />
+
+                                                <ImageButton
+                                                    Grid.Row="3"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="Transparent"
+                                                    HeightRequest="20"
+                                                    HorizontalOptions="Center"
+                                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.rental.png}"
+                                                    VerticalOptions="Center" />
+                                                <Label
+                                                    Grid.Row="3"
+                                                    Grid.Column="1"
+                                                    FontSize="Small"
+                                                    TextColor="{StaticResource BlackColor}"
+                                                    VerticalOptions="Center">
+                                                    Rental
+                                                </Label>
+
+                                                <Label
+                                                    Grid.Row="3"
+                                                    Grid.Column="2"
+                                                    FontSize="Small"
+                                                    Text="{Binding RateTotal}"
+                                                    TextColor="{StaticResource GrayColor}"
+                                                    VerticalOptions="Center" />
+
+                                                <ImageButton
+                                                    Grid.Row="4"
+                                                    Grid.Column="0"
+                                                    BackgroundColor="Transparent"
+                                                    HeightRequest="20"
+                                                    HorizontalOptions="Center"
+                                                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.odometer.png}"
+                                                    VerticalOptions="Center" />
+                                                <Label
+                                                    Grid.Row="4"
+                                                    Grid.Column="1"
+                                                    FontSize="Small"
+                                                    TextColor="{StaticResource BlackColor}"
+                                                    VerticalOptions="Center">
+                                                    Mileage Per Day
+                                                </Label>
+
+                                                <Label
+                                                    Grid.Row="4"
+                                                    Grid.Column="2"
+                                                    FontSize="Small"
+                                                    Text="{Binding MileagePerDay}"
+                                                    TextColor="{StaticResource GrayColor}"
+                                                    VerticalOptions="Center" />
+
+                                            </Grid>
+                                            <Label
+                                                Grid.Row="2"
+                                                Grid.Column="0"
+                                                FontSize="Small"
+                                                HorizontalOptions="End"
+                                                Text="Similar to"
+                                                TextColor="{StaticResource BlackColor}"
+                                                VerticalOptions="Center" />
+
+                                            <Label
+                                                Grid.Row="2"
+                                                Grid.Column="1"
+                                                FontSize="Small"
+                                                HorizontalOptions="Start"
+                                                Text="{Binding sample}"
+                                                TextColor="{StaticResource GrayColor}"
+                                                VerticalOptions="Center" />
+                                        </Grid>-->
+                                            </renders:ExtendedViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                    <ListView.Footer>
+                                        <StackLayout Margin="0,0,0,80" />
+                                    </ListView.Footer>
+                                </ListView>
+
+                                <Image  Margin="5"
+                                        IsVisible="false"
+                                        x:Name="noVehicleLabelImage"
+                                        VerticalOptions="CenterAndExpand"
+                                        HorizontalOptions="Fill"
+                                        Aspect="AspectFit"
+                                        Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.Illustrations.Empty.png}">
+                                    <Image.HeightRequest>
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="250"
+                                            Tablet="250" />
+                                    </Image.HeightRequest>
+                                </Image>
+
+                                <Label
+                                    x:Name="noVehicleLabel"
+                                    Margin="0,5,0,100"
+                                    HorizontalOptions="Center"
+                                    IsVisible="False"
+                                    Text="Uh oh! All of our cars are rented."
+                                    TextColor="{AppThemeBinding Light= {StaticResource BlackColor},Dark={StaticResource BackGroundColor}}"
+                                    VerticalOptions="Center" 
+                                    FontAttributes="Bold"
+                                    FontFamily="SourceSansPro-Bold">
+                                    <Label.FontSize>
+                                        <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">
+                                                <OnIdiom
+                                                                        x:TypeArguments="x:Double"
+                                                                        Phone="16"
+                                                                        Tablet="40" />
+                                            </On>
+                                            <On Platform="Android,Windows">
+                                                <OnIdiom
+                                                                        x:TypeArguments="x:Double"
+                                                                        Phone="17"
+                                                                        Tablet="21" />
+                                            </On>
+                                        </OnPlatform>
+                                    </Label.FontSize>
+                                </Label>
+                            </StackLayout>
+
+
+
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+            <!--<Frame
+                Margin="0,0,10,15"
+                Padding="0"
+                BackgroundColor="{StaticResource PrimaryColorDuplicate}"
+                CornerRadius="40"
+                HasShadow="False"
+                HeightRequest="60"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="EndAndExpand"
+                WidthRequest="60">
+                <Image
+                    HeightRequest="30"
+                    HorizontalOptions="CenterAndExpand"
+                    Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconFilter.png}"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="30" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        x:Name="btnFilter"
+                        NumberOfTapsRequired="1"
+                        Tapped="btnFilter_Tapped" />
+                </Frame.GestureRecognizers>
+            </Frame>-->
+            <Image
+                IsVisible="false"
+                Margin="0,0,10,15"
+                HorizontalOptions="EndAndExpand"
+                Source="{local:EmbeddedImage ResourceId=LogistikFleet.Assets.iconRedCircleFilter.png}"
+                VerticalOptions="EndAndExpand">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                        x:Name="btnFilter"
+                        NumberOfTapsRequired="1"
+                        Tapped="btnFilter_Tapped" />
+                </Image.GestureRecognizers>
+                <Image.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="60"
+                                Tablet="80" />
+                        </On>
+                        <On Platform="Android,Windows">
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="60"
+                                Tablet="80" />
+                        </On>
+                    </OnPlatform>
+                </Image.HeightRequest>
+                <Image.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="60"
+                                Tablet="80" />
+                        </On>
+                        <On Platform="Android,Windows">
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="60"
+                                Tablet="80" />
+                        </On>
+                    </OnPlatform>
+                </Image.WidthRequest>
+            </Image>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
