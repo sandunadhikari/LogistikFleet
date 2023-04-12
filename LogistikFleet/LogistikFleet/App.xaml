@@ -18,7 +18,7 @@
 
             <Color x:Key="BlackColor">#000000</Color>
             <Color x:Key="PrimaryColor">#000000</Color>
-            <Color x:Key="AccentColor">#0d314e</Color>
+            <Color x:Key="AccentColor">#c00210</Color>
             <Color x:Key="PrimaryColorDuplicate">#000000</Color>
             <Color x:Key="GrayColor">#9C9D9E</Color>
             <Color x:Key="LightGrayColor">#EAEAEA</Color>

@@ -193,14 +193,14 @@
                                             <On Platform="iOS">
                                                 <OnIdiom
                                         x:TypeArguments="x:Double"
-                                        Phone="65"
-                                        Tablet="75" />
+                                        Phone="70"
+                                        Tablet="80" />
                                             </On>
                                             <On Platform="Android,Windows">
                                                 <OnIdiom
                                         x:TypeArguments="x:Double"
-                                       Phone="65"
-                                        Tablet="75" />
+                                       Phone="70"
+                                        Tablet="80" />
                                             </On>
                                         </OnPlatform>
                                     </Image.WidthRequest>
@@ -209,14 +209,14 @@
                                             <On Platform="iOS">
                                                 <OnIdiom
                                         x:TypeArguments="x:Double"
-                                       Phone="65"
-                                        Tablet="75" />
+                                       Phone="70"
+                                        Tablet="80" />
                                             </On>
                                             <On Platform="Android,Windows">
                                                 <OnIdiom
                                         x:TypeArguments="x:Double"
-                                        Phone="65"
-                                        Tablet="75" />
+                                        Phone="70"
+                                        Tablet="80" />
                                             </On>
                                         </OnPlatform>
                                     </Image.HeightRequest>
@@ -2565,6 +2565,7 @@
                             Grid.Row="5"
                             Margin="20,0,20,20"
                            BackgroundColor="{StaticResource AccentColor}"
+                           BorderColor="{StaticResource AccentColor}"
                             BorderWidth="2"
                             Clicked="NxtBtn_Clicked"
                             Text="NEXT"

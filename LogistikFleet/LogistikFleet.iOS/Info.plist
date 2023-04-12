@@ -20,12 +20,10 @@
 	</array>
 	<key>MinimumOSVersion</key>
 	<string>8.0</string>
-	<key>CFBundleDisplayName</key>
-	<string>Rentall Consumer</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
-	<string>RentallConsumer</string>
+	<string>LogistikFleet</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSCameraUsageDescription</key>
@@ -37,12 +35,14 @@
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>This app needs access to the photo gallery.</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.rentallV3.RenrallConsumer</string>
+	<string>com.rentallV3.LogistikFleet</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.0</string>
+	<string>1.0.0</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>This app needs access to the calendar to select dates</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>CFBundleDisplayName</key>
+	<string>Logistik Fleet</string>
 </dict>
 </plist>

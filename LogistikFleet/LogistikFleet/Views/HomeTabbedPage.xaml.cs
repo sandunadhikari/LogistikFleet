@@ -22,7 +22,7 @@ namespace LogistikFleet.Views
 
             On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom)
              .SetBarItemColor(Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark ? Color.Gray : Color.Black)
-             .SetBarSelectedItemColor(Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark ? Color.FromHex("#1f5682") : Color.FromHex("#1f5682"))
+             .SetBarSelectedItemColor(Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark ? Color.FromHex("#c00210") : Color.FromHex("#c00210"))
              .SetIsSwipePagingEnabled(false);
 
             this.SelectedItem = Dashboard;
@@ -34,7 +34,7 @@ namespace LogistikFleet.Views
         {
             base.OnAppearing();
             On<Android>().SetBarItemColor(Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark ? Color.Gray : Color.Black)
-                 .SetBarSelectedItemColor(Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark ? Color.FromHex("#1f5682") : Color.FromHex("#1f5682"));
+                 .SetBarSelectedItemColor(Xamarin.Forms.Application.Current.RequestedTheme == OSAppTheme.Dark ? Color.FromHex("#c00210") : Color.FromHex("#c00210"));
 
             this.SelectedItem = Dashboard;
         }

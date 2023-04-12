@@ -239,14 +239,14 @@ Clicked="btnBack_Clicked"
                                             <On Platform="iOS">
                                                 <OnIdiom
                                         x:TypeArguments="x:Double"
-                                        Phone="65"
-                                        Tablet="75" />
+                                        Phone="70"
+                                        Tablet="80" />
                                             </On>
                                             <On Platform="Android,Windows">
                                                 <OnIdiom
                                         x:TypeArguments="x:Double"
-                                       Phone="65"
-                                        Tablet="75" />
+                                       Phone="70"
+                                        Tablet="80" />
                                             </On>
                                         </OnPlatform>
                                     </Image.WidthRequest>
@@ -255,14 +255,14 @@ Clicked="btnBack_Clicked"
                                             <On Platform="iOS">
                                                 <OnIdiom
                                         x:TypeArguments="x:Double"
-                                       Phone="65"
-                                        Tablet="75" />
+                                       Phone="70"
+                                        Tablet="80" />
                                             </On>
                                             <On Platform="Android,Windows">
                                                 <OnIdiom
                                         x:TypeArguments="x:Double"
-                                        Phone="65"
-                                        Tablet="75" />
+                                        Phone="70"
+                                        Tablet="80" />
                                             </On>
                                         </OnPlatform>
                                     </Image.HeightRequest>

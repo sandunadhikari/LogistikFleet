@@ -51,138 +51,150 @@ namespace LogistikFleet.Popups
 
         private async void CameraBtn_Clicked(object sender, EventArgs e)
         {
-            var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<CameraPermission>();
-            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<StoragePermission>();
-
-            if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
+            try
             {
-                cameraStatus = await CrossPermissions.Current.RequestPermissionAsync<CameraPermission>();
-                storageStatus = await CrossPermissions.Current.RequestPermissionAsync<StoragePermission>();
-            }
+                var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<CameraPermission>();
+                var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<StoragePermission>();
 
-            if (cameraStatus == PermissionStatus.Granted && storageStatus == PermissionStatus.Granted)
-            {
-
-
-                await CrossMedia.Current.Initialize();
-
-                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
                 {
-                    _ = DisplayAlert("No Camera", ":( No camera available.", "OK");
-
+                    cameraStatus = await CrossPermissions.Current.RequestPermissionAsync<CameraPermission>();
+                    storageStatus = await CrossPermissions.Current.RequestPermissionAsync<StoragePermission>();
                 }
 
-
-                var files = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-                {
-                    PhotoSize = PhotoSize.Medium,
-                    SaveToAlbum = true,
-                    ModalPresentationStyle = MediaPickerModalPresentationStyle.OverFullScreen
-                });
-
-                if (files == null)
+                if (cameraStatus == PermissionStatus.Granted && storageStatus == PermissionStatus.Granted)
                 {
 
-                    return;
+
+                    await CrossMedia.Current.Initialize();
+
+                    if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                    {
+                        _ = DisplayAlert("No Camera", ":( No camera available.", "OK");
+
+                    }
+
+
+                    var files = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                    {
+                        PhotoSize = PhotoSize.Medium,
+                        SaveToAlbum = true,
+                        ModalPresentationStyle = MediaPickerModalPresentationStyle.OverFullScreen
+                    });
+
+                    if (files == null)
+                    {
+
+                        return;
+                    }
+                    else
+                    {
+                        //imageBox.IsVisible = true;
+                        //                    stream = files.GetStream();
+                        selectedImage.Source = ImageSource.FromStream(() => files.GetStream());
+                        //PhotoFrame.IsVisible = true;
+                        // SaveBtn.IsVisible = true;
+                        // cancelBtn.IsVisible = true;
+                        grdMain.IsVisible = false;
+                        PhotoFrame.IsVisible = true;
+
+                        // provide read access to the file
+                        FileStream fs = new FileStream(files.Path, FileMode.Open, FileAccess.Read);
+                        // Create a byte array of file stream length
+                        byte[] ImageData = new byte[fs.Length];
+                        //Read block of bytes from stream into the byte array
+                        fs.Read(ImageData, 0, System.Convert.ToInt32(fs.Length));
+                        //Close the File Stream
+                        fs.Close();
+                        PhysicalPath = files.Path;
+                        UploadedDate = DateTime.Now;
+                        _base64Image = Convert.ToBase64String(ImageData);
+                    }
+
                 }
                 else
                 {
-                    //imageBox.IsVisible = true;
-                    //                    stream = files.GetStream();
-                    selectedImage.Source = ImageSource.FromStream(() => files.GetStream());
-                    //PhotoFrame.IsVisible = true;
-                    // SaveBtn.IsVisible = true;
-                    // cancelBtn.IsVisible = true;
-                    grdMain.IsVisible = false;
-                    PhotoFrame.IsVisible = true;
-
-                    // provide read access to the file
-                    FileStream fs = new FileStream(files.Path, FileMode.Open, FileAccess.Read);
-                    // Create a byte array of file stream length
-                    byte[] ImageData = new byte[fs.Length];
-                    //Read block of bytes from stream into the byte array
-                    fs.Read(ImageData, 0, System.Convert.ToInt32(fs.Length));
-                    //Close the File Stream
-                    fs.Close();
-                    PhysicalPath = files.Path;
-                    UploadedDate = DateTime.Now;
-                    _base64Image = Convert.ToBase64String(ImageData);
+                    await DisplayAlert("Permissions Denied", "Unable to take photos.", "OK");
+                    //On iOS you may want to send your user to the settings screen.
+                    //CrossPermissions.Current.OpenAppSettings();
                 }
-
-            }
-            else
+            }catch(Exception ex)
             {
-                await DisplayAlert("Permissions Denied", "Unable to take photos.", "OK");
-                //On iOS you may want to send your user to the settings screen.
-                //CrossPermissions.Current.OpenAppSettings();
+
             }
 
         }
 
         private async void GaleryBtn_Clicked(object sender, EventArgs e)
         {
-            var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<CameraPermission>();
-            var mediaLibraryStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<MediaLibraryPermission>();
-            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<StoragePermission>();
+            try
+            {
+                var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<CameraPermission>();
+                var mediaLibraryStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<MediaLibraryPermission>();
+                var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync<StoragePermission>();
 
-            if (mediaLibraryStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
-            {
-                mediaLibraryStatus = await CrossPermissions.Current.RequestPermissionAsync<MediaLibraryPermission>();
-                storageStatus = await CrossPermissions.Current.RequestPermissionAsync<StoragePermission>();
-            }
-            if (mediaLibraryStatus == PermissionStatus.Granted && storageStatus == PermissionStatus.Granted)
-            {
-                await CrossMedia.Current.Initialize();
-                if (!CrossMedia.Current.IsPickPhotoSupported)
+                if (mediaLibraryStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
                 {
-                    await DisplayAlert("Not Sopported", "Your device does not currently support this functionality", "OK");
-                    return;
-
+                    mediaLibraryStatus = await CrossPermissions.Current.RequestPermissionAsync<MediaLibraryPermission>();
+                    storageStatus = await CrossPermissions.Current.RequestPermissionAsync<StoragePermission>();
                 }
-                var selectedImages = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
+                if (mediaLibraryStatus == PermissionStatus.Granted && storageStatus == PermissionStatus.Granted)
                 {
-                    PhotoSize = PhotoSize.Medium
-                });
+                    await CrossMedia.Current.Initialize();
+                    if (!CrossMedia.Current.IsPickPhotoSupported)
+                    {
+                        await DisplayAlert("Not Sopported", "Your device does not currently support this functionality", "OK");
+                        return;
 
-                if (selectedImages == null)
-                {
-                    await DisplayAlert("Error", "Could not get the image, Please try again", "Ok");
-                    return;
+                    }
+                    var selectedImages = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
+                    {
+                        PhotoSize = PhotoSize.Medium
+                    });
+
+                    if (selectedImages == null)
+                    {
+                        await DisplayAlert("Error", "Could not get the image, Please try again", "Ok");
+                        return;
+                    }
+                    else
+                    {
+                        // provide read access to the file
+                        FileStream fs = new FileStream(selectedImages.Path, FileMode.Open, FileAccess.Read);
+                        // Create a byte array of file stream length
+                        byte[] ImageData = new byte[fs.Length];
+                        //Read block of bytes from stream into the byte array
+                        fs.Read(ImageData, 0, System.Convert.ToInt32(fs.Length));
+                        //Close the File Stream
+                        fs.Close();
+                        _base64Image = Convert.ToBase64String(ImageData);
+
+
+                        //PhotoPath = selectedImage.Path;
+                        //                    stream = selectedImage.GetStream();
+                        //uploadTime = DateTime.Now;
+
+                        //imageBox.IsVisible = true;
+                        selectedImage.Source = ImageSource.FromStream(() => selectedImages.GetStream());
+                        //  PhotoFrame.IsVisible = true;
+                        //SaveBtn.IsVisible = true;
+                        //cancelBtn.IsVisible = true;
+                        grdMain.IsVisible = false;
+                        PhotoFrame.IsVisible = true;
+                        PhysicalPath = selectedImages.Path;
+                        UploadedDate = DateTime.Now;
+
+                    }
                 }
                 else
                 {
-                    // provide read access to the file
-                    FileStream fs = new FileStream(selectedImages.Path, FileMode.Open, FileAccess.Read);
-                    // Create a byte array of file stream length
-                    byte[] ImageData = new byte[fs.Length];
-                    //Read block of bytes from stream into the byte array
-                    fs.Read(ImageData, 0, System.Convert.ToInt32(fs.Length));
-                    //Close the File Stream
-                    fs.Close();
-                    _base64Image = Convert.ToBase64String(ImageData);
-
-
-                    //PhotoPath = selectedImage.Path;
-                    //                    stream = selectedImage.GetStream();
-                    //uploadTime = DateTime.Now;
-
-                    //imageBox.IsVisible = true;
-                    selectedImage.Source = ImageSource.FromStream(() => selectedImages.GetStream());
-                    //  PhotoFrame.IsVisible = true;
-                    //SaveBtn.IsVisible = true;
-                    //cancelBtn.IsVisible = true;
-                    grdMain.IsVisible = false;
-                    PhotoFrame.IsVisible = true;
-                    PhysicalPath = selectedImages.Path;
-                    UploadedDate = DateTime.Now;
-
+                    await DisplayAlert("Permissions Denied", "Unable to access gallery.", "OK");
+                    //On iOS you may want to send your user to the settings screen.
+                    //CrossPermissions.Current.OpenAppSettings();
                 }
-            }
-            else
+            }catch(Exception ex)
             {
-                await DisplayAlert("Permissions Denied", "Unable to access gallery.", "OK");
-                //On iOS you may want to send your user to the settings screen.
-                //CrossPermissions.Current.OpenAppSettings();
+
             }
 
 

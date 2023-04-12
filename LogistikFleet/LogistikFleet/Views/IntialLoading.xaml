@@ -70,7 +70,7 @@
                                         Padding="10,1"
                                         HeightRequest="30"
                                         BackgroundColor="{StaticResource AccentColor}"
-                                       
+                                       BorderColor="{StaticResource AccentColor}"
                                             BorderWidth="1"
                                             Clicked="skipLabelTap_Tapped">
                                         <Button.FontSize>
@@ -143,7 +143,7 @@
             Margin="15"
             VerticalOptions="End"
             HorizontalOptions="Center"
-            IndicatorColor="{ AppThemeBinding Dark={StaticResource DarkBlue}, Light={StaticResource DarkBlue} }"
+            IndicatorColor="{ AppThemeBinding Dark={StaticResource LigthRed}, Light={StaticResource LigthRed} }"
             IndicatorSize="10"
             SelectedIndicatorColor="{ AppThemeBinding Dark={StaticResource White}, Light={StaticResource White} }" >
            

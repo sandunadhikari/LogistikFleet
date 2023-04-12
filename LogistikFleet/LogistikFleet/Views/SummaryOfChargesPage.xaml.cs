@@ -428,7 +428,7 @@ namespace LogistikFleet.Views
                                     {
                                         string message = selectedVehicle.deposit > 0 ? "A $" + selectedVehicle.deposit.ToString("0.00") + " security deposit is required on the day of the reservation." : "";
                                         //DependencyService.Get<INotification>().CreateNotification("Booking completed successfully", "Your reservation " + ReservationMobileResponse.ReservationNumber + " created successfully. Please check the details.", "ViewReservation", ReservationMobileResponse.ReserveId.ToString());
-                                        await PopupNavigation.Instance.PushAsync(new SuccessPopUp(string.Format("Thank you for your {0} rental reservation.{1} If you need to make any changes to your reservation, please contact us through the website at swiftrentals.com/contact. We look forward to seeing you soon and thank you for choosing our company to lower your carbon footprint. #Swift Rentals.", this.selectedVehicle.vehicleName, message), 1));
+                                        await PopupNavigation.Instance.PushAsync(new SuccessPopUp(string.Format("Thank you for your {0} rental reservation.{1} If you need to make any changes to your reservation, please contact us through the website at logistikfleetservices.com/contact. We look forward to seeing you soon and thank you for choosing our company to lower your carbon footprint. #Logistik Fleet Services.", this.selectedVehicle.vehicleName, message), 1));
                                     }
                                 }
                                 else if (ReservationMobileResponse.message.ErrorCode == "120")

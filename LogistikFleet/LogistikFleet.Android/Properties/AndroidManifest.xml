@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="0.1.0" package="com.rentallV3.RenrallConsumer" android:installLocation="auto" android:versionCode="1">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0.0" package="com.rentallV3.LogistikFleet" android:installLocation="auto" android:versionCode="1">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
-	<application android:label="Rentall Consumer" android:theme="@style/MainTheme" android:usesCleartextTraffic="true" android:icon="@mipmap/launcher_foreground_adaptive_fore">
+	<application android:label="Logistik Fleet" android:theme="@style/MainTheme" android:usesCleartextTraffic="true" android:icon="@mipmap/ic_launcher">
 		<provider android:name="android.support.v4.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:grantUriPermissions="true">
 			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
 		</provider>

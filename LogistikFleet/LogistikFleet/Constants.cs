@@ -13,11 +13,11 @@ namespace LogistikFleet
         //public static int ClientId = 1469; //production Evolve
         //public static int ClientId = 1308; //production ML
         //public static int ClientId = 1575; //production autopreneurclub
-        //public static int ClientId = 1827; //production Logistik Fleet
+        public static int ClientId = 1827; //production Logistik Fleet
         //public static int ClientId = 1854; //production Swift Rentals
         //public static int ClientId = 975;
         //public static int ClientId = 262;
-        public static int ClientId = 1935;//Rentall Consumer
+        //public static int ClientId = 1935;//Rentall Consumer
 
         public static Admin admin = null;
         public static CutomerAuthContext cutomerAuthContext = null;

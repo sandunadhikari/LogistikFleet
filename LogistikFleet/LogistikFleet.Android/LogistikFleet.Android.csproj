@@ -577,35 +577,45 @@
       <Generator>
       </Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png">
-      <SubType>
-      </SubType>
-      <Generator>
-      </Generator>
+      <SubType></SubType>
+      <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png">
-      <SubType>
-      </SubType>
-      <Generator>
-      </Generator>
+      <SubType></SubType>
+      <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png">
-      <SubType>
-      </SubType>
-      <Generator>
-      </Generator>
+      <SubType></SubType>
+      <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png">
-      <SubType>
-      </SubType>
-      <Generator>
-      </Generator>
+      <SubType></SubType>
+      <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png">
-      <SubType>
-      </SubType>
-      <Generator>
-      </Generator>
+      <SubType></SubType>
+      <Generator></Generator>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>

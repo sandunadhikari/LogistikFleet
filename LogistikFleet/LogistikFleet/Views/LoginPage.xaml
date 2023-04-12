@@ -69,7 +69,7 @@
                         FontAttributes="Bold"
                         HorizontalOptions="Center"
                         Text="Login"
-                        TextColor="{StaticResource DarkBlue}">
+                        TextColor="{StaticResource AccentColor}">
                             <Label.FontSize>
                                 <OnPlatform x:TypeArguments="x:Double">
                                     <On Platform="iOS">
@@ -391,6 +391,7 @@
                     <Button
                     x:Name="LoginButton"
                     BackgroundColor="{StaticResource AccentColor}"
+                    BorderColor="{StaticResource AccentColor}"
                     BorderWidth="2"
                     Clicked="LoginButton_Clicked"
                     FontFamily="SourceSansPro-Black"
@@ -547,7 +548,7 @@
                         FontFamily="SourceSansPro-Black"
                         FontAttributes="Bold"
                         Text=" Sign Up"
-                        TextColor="{StaticResource DarkBlue}"
+                        TextColor="{StaticResource AccentColor}"
                         VerticalOptions="Center">
 
                             <Label.FontSize>

@@ -179,7 +179,7 @@ namespace LogistikFleet.Views
 
             unSelectedTab();
             btnMyRentals.BackgroundColor = Color.FromHex("#F3f3f3");
-            btnMyRentals.TextColor = Color.FromHex("#1f5682");
+            btnMyRentals.TextColor = Color.FromHex("#f04646");
             grdRentals.IsVisible = true;
             //lastAgreementStack.IsVisible = false;
             Constants.IsHome = true;
@@ -306,7 +306,7 @@ namespace LogistikFleet.Views
                             else
                             {
                                 reservation_carousel.IsVisible = false;
-                                nobookinStack.IsVisible = false;
+                                nobookinStack.IsVisible = true;
                             }
 
                             if (registrationDBModel.Agreements.Count > 0)
@@ -597,7 +597,7 @@ namespace LogistikFleet.Views
             {
                 unSelectedTab();
                 btnMyRentals.BackgroundColor = Color.FromHex("#F3f3f3");
-                btnMyRentals.TextColor = Color.FromHex("#1f5682");
+                btnMyRentals.TextColor = Color.FromHex("#f04646");
                 //if (isreservation)
                 //{
                 grdRentals.IsVisible = true;
@@ -631,7 +631,7 @@ namespace LogistikFleet.Views
                 unSelectedTab();
                 //BooknowBtn.IsVisible = false;
                 btnPastRental.BackgroundColor = Color.FromHex("#F3f3f3");
-                btnPastRental.TextColor = Color.FromHex("#1f5682");
+                btnPastRental.TextColor = Color.FromHex("#f04646");
                 grdPastRentals.IsVisible = true;
 
                 Device.BeginInvokeOnMainThread(async () =>
