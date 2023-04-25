@@ -14,7 +14,7 @@
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand"
                     Aspect="AspectFill"
-                    Source="car1.png" Opacity="0.6">
+                    Source="car1.png" Opacity="0.4">
 
             </Image>
             <Image
