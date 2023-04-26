@@ -253,6 +253,7 @@
     <BundleResource Include="Resources\preneur.png" />
     <BundleResource Include="Resources\SnapLogo.png" />
     <BundleResource Include="Resources\SnapLogoWhite.png" />
+    <BundleResource Include="Resources\illu8.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\aSlide1.gif" />

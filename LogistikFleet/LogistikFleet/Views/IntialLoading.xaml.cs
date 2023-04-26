@@ -42,7 +42,7 @@ namespace LogistikFleet.Views
             base.OnAppearing();
             var list = new List<SlidePageItems>
             {
-               new SlidePageItems(){ id=0,label= "Welcome to our app. ",imageMobile="ms-appx:///miroshnichenko.mp4",imageTap="illu1.png",imageTapL="aSlide1s.gif",Skiplabel="Skip"},
+               new SlidePageItems(){ id=0,label= "Welcome to our app. ",imageMobile="ms-appx:///miroshnichenko.mp4",imageTap="illu8.png",imageTapL="aSlide1s.gif",Skiplabel="Skip"},
                  new SlidePageItems(){ id=1,label="We are providing long term rentals. ",imageMobile="ms-appx:///luxury.mp4",imageTap="illu3.png",imageTapL="aSlide2s.gif", Skiplabel="Skip"},
                    new SlidePageItems(){ id=2,label= "Lower deposit, Lesser fees.  ",imageMobile="ms-appx:///Yacht.mp4",imageTap="illu4.png",imageTapL="aSlide3Ls.gif", Skiplabel="Next"}
             };
